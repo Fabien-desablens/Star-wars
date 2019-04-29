@@ -47,8 +47,7 @@ body{
 .crawl  {
     /* centrage de l'élément' */
     position: absolute;
-    top: 45%;
-    width: 800px;
+    width: 75%;
     margin: 0;
     top: auto;
     bottom: 0;
