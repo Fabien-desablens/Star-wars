@@ -1,0 +1,81 @@
+html,
+body{
+    width: 100%;
+    height: 100%;
+    background: black;
+    margin: 0;
+    overflow: hidden; /* Enlève la scrollbar */
+    
+    /* centrer le texte */
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+
+.A-long-time-ago {
+    /* cosmétique */
+    font-size: 32px;
+    color: cyan;
+    /* Animation */
+    opacity: 0; /*invisible au départ*/
+    animation-delay: 1s;
+    animation-duration: 8s;
+    animation-name: fonduopacite;    
+}
+@keyframes fonduopacite {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    80% {opacity: 1;}
+    100% {opacity: 0;}
+}
+    
+.logo {
+  position: absolute;
+  opacity: 0;
+  animation: logo ease-out 7.9s;
+  animation-delay: 7.9s;
+  transform: scale(2.5);
+}
+  
+@keyframes logo {
+  0% { opacity: 1;}
+  65% { opacity: 1;}
+  100% { transform:scale(.01); opacity: 0; }
+}
+
+
+.crawl  {
+    /* centrage de l'élément' */
+    position: absolute;
+    top: 45%;
+    width: 800px;
+    margin: 0;
+    top: auto;
+    bottom: 0;
+    height: 50em;
+    /* cosmétique */
+    color: #ffff66;    
+    font-size: 50px;
+    text-align: justify;
+    /* Applique la transformation  */
+    transform-origin: center bottom;
+    transform: perspective(300px) rotateX(25deg);
+}
+
+.mouvement {
+    /* positionne la div en bas de l'écran (non visible) */
+    /* l'animation la fait remonter progressivement */
+    position: absolute;
+    top: 100%;
+    animation-delay:15s; /* Démarre l'animation après la première */
+    animation-duration: 40s;
+    
+    animation-name: crawl;
+    animation-timing-function: linear;
+}
+
+@keyframes crawl {
+    0% { top: 100%; opacity: 1;}
+    80% { opacity: 1;}
+    100% { top: 0; opacity: 0;}
+}
